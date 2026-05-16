@@ -19,4 +19,5 @@ Create a minimal deployable Astro site for `www.kankaku.net` and publish it to G
 
 - Project context and minimal Astro pages created.
 - `npm run build` and `npm audit --audit-level=moderate` passed.
-- GitHub repository creation is next.
+- GitHub repository created at `https://github.com/kankaku/tobira`.
+- `main` pushed.

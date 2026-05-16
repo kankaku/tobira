@@ -11,11 +11,13 @@ M0: Minimal deployable Hello World site.
 - Root and project slug Hello World pages added.
 - Dependencies installed.
 - Build and npm audit verification passed.
+- GitHub repository created and `main` pushed.
 
 ## Not yet done
 
-- Create and push GitHub repository.
+- Configure Cloudflare Pages deployment.
+- Connect `www.kankaku.net`.
 
 ## Next recommended step
 
-Initialize Git, create the GitHub repository, and push `main`.
+Configure Cloudflare Pages from the GitHub repository.
