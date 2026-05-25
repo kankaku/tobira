@@ -13,16 +13,19 @@ development.
 3. Add the warning screenshot assets under `public/`.
 4. Verify the build and browser-rendered localhost/public-host behavior.
 5. Commit, push, open a PR, and run the autonomous review loop.
+6. Replace static demo client details with live Cloudflare request metadata.
 
 ## Verification
 
 - `npm run build`
 - Browser check for `localhost` bypass.
 - Browser check for public host simulation.
+- Pages Function client info response check.
 
 ## Status
 
 - Static warning gate implemented.
 - Build and browser verification passed.
 - PR review feedback addressed by moving the document shell into an Astro layout.
-- PR review loop pending.
+- Client IP reveal and live Ray ID fetch implemented.
+- Current PR review loop pending.

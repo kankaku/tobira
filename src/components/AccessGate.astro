@@ -1,7 +1,6 @@
 ---
 const siteHost = 'www.kankaku.net';
-const rayId = '8f7c9f4a1b2c3d4e';
-const demoIp = '203.0.113.42';
+const fallbackRayId = 'cGFnZSB1bmRlciBjb25zdHJ1Y3Rpb24=';
 ---
 
 <main class="public-warning" id="cf-wrapper">
@@ -51,11 +50,22 @@ const demoIp = '203.0.113.42';
     <footer class="cf-error-footer cf-wrapper">
       <p>
         <span class="cf-footer-item">
-          Cloudflare Ray ID: <strong>{rayId}</strong>
+          Cloudflare Ray ID:
+          <strong id="cf-footer-ray-id" data-fallback-ray-id={fallbackRayId}>
+            {fallbackRayId}
+          </strong>
         </span>
         <span class="cf-footer-separator">•</span>
-        <span class="cf-footer-item">
-          Your IP: <span>{demoIp}</span>
+        <span class="cf-footer-item" id="cf-footer-item-ip">
+          Your IP:
+          <button
+            type="button"
+            id="cf-footer-ip-reveal"
+            class="cf-footer-ip-reveal-btn"
+          >
+            Click to reveal
+          </button>
+          <span id="cf-footer-ip" hidden></span>
         </span>
         <span class="cf-footer-separator">•</span>
         <span class="cf-footer-item">
@@ -77,6 +87,61 @@ const demoIp = '203.0.113.42';
   <h1>kankaku</h1>
   <p>Localhost preview</p>
 </main>
+
+<script is:inline>
+  (() => {
+    const clientInfoPath = '/api/client-info';
+    const rayIdElement = document.getElementById('cf-footer-ray-id');
+    const revealButton = document.getElementById('cf-footer-ip-reveal');
+    const ipElement = document.getElementById('cf-footer-ip');
+    const fallbackRayId =
+      rayIdElement?.dataset.fallbackRayId || 'cGFnZSB1bmRlciBjb25zdHJ1Y3Rpb24=';
+
+    const updateRayId = (rayId) => {
+      if (rayIdElement) {
+        rayIdElement.textContent = rayId || fallbackRayId;
+      }
+    };
+
+    const fetchClientInfo = async (revealIp = false) => {
+      const url = revealIp ? `${clientInfoPath}?revealIp=1` : clientInfoPath;
+      const response = await fetch(url, {
+        cache: 'no-store',
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Client info request failed: ${response.status}`);
+      }
+
+      return response.json();
+    };
+
+    fetchClientInfo()
+      .then(({ rayId }) => updateRayId(rayId))
+      .catch(() => updateRayId(fallbackRayId));
+
+    revealButton?.addEventListener('click', async () => {
+      revealButton.disabled = true;
+      revealButton.textContent = 'Loading...';
+
+      try {
+        const { ip, rayId } = await fetchClientInfo(true);
+        updateRayId(rayId);
+
+        if (ipElement) {
+          ipElement.textContent = ip || 'Unavailable';
+          ipElement.hidden = false;
+        }
+
+        revealButton.hidden = true;
+      } catch {
+        revealButton.disabled = false;
+        revealButton.textContent = 'Click to reveal';
+      }
+    });
+  })();
+</script>
 
 <style is:global>
   html,
@@ -147,6 +212,30 @@ const demoIp = '203.0.113.42';
 
   #cf-wrapper a:hover {
     color: #f68b1f;
+  }
+
+  #cf-wrapper .cf-footer-ip-reveal-btn {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: #0051c3;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    transition: color 0.15s ease;
+  }
+
+  #cf-wrapper .cf-footer-ip-reveal-btn:hover {
+    color: #f68b1f;
+  }
+
+  #cf-wrapper .cf-footer-ip-reveal-btn:disabled {
+    color: #595959;
+    cursor: wait;
+  }
+
+  #cf-wrapper [hidden] {
+    display: none;
   }
 
   #cf-wrapper h1,
