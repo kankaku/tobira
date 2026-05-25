@@ -1,0 +1,396 @@
+---
+const siteHost = 'www.kankaku.net';
+const rayId = '8f7c9f4a1b2c3d4e';
+const demoIp = '203.0.113.42';
+---
+
+<!doctype html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Attention Required! | Cloudflare</title>
+    <script is:inline>
+      (() => {
+        const localHosts = new Set(['localhost', '127.0.0.1', '::1']);
+        if (localHosts.has(window.location.hostname)) {
+          document.documentElement.dataset.access = 'local';
+          document.title = 'kankaku';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <main class="public-warning" id="cf-wrapper">
+      <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert">
+        Please enable cookies.
+      </div>
+      <section id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-header cf-error-overview">
+          <h1>Sorry, you have been blocked</h1>
+          <h2 class="cf-subheadline">
+            <span>You are unable to access</span> {siteHost}
+          </h2>
+        </div>
+
+        <div class="cf-section cf-highlight">
+          <div class="cf-wrapper">
+            <div class="cf-screenshot-container cf-screenshot-full" aria-hidden="true">
+              <span class="cf-no-screenshot error"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cf-section cf-wrapper">
+          <div class="cf-columns two">
+            <div class="cf-column">
+              <h2>Why have I been blocked?</h2>
+              <p>
+                This website is using a security service to protect itself from
+                online attacks. The action you just performed triggered the
+                security solution. There are several actions that could trigger
+                this block including submitting a certain word or phrase, a SQL
+                command or malformed data.
+              </p>
+            </div>
+
+            <div class="cf-column">
+              <h2>What can I do to resolve this?</h2>
+              <p>
+                You can email the site owner to let them know you were blocked.
+                Please include what you were doing when this page came up and the
+                Cloudflare Ray ID found at the bottom of this page.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="cf-error-footer cf-wrapper">
+          <p>
+            <span class="cf-footer-item">
+              Cloudflare Ray ID: <strong>{rayId}</strong>
+            </span>
+            <span class="cf-footer-separator">•</span>
+            <span class="cf-footer-item">
+              Your IP: <span>{demoIp}</span>
+            </span>
+            <span class="cf-footer-separator">•</span>
+            <span class="cf-footer-item">
+              <span>Performance &amp; security by</span>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.cloudflare.com/5xx-error-landing"
+                target="_blank"
+              >
+                Cloudflare
+              </a>
+            </span>
+          </p>
+        </footer>
+      </section>
+    </main>
+
+    <main class="local-preview" aria-label="Local preview">
+      <h1>kankaku</h1>
+      <p>Localhost preview</p>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+  }
+
+  html:not([data-access='local']) .local-preview,
+  html[data-access='local'] #cf-wrapper.public-warning {
+    display: none;
+  }
+
+  .local-preview {
+    align-items: center;
+    background: #fafafa;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      'Helvetica Neue', Arial, sans-serif;
+    gap: 12px;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .local-preview h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .local-preview p {
+    color: #666;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  #cf-wrapper,
+  #cf-wrapper *,
+  #cf-wrapper *::before,
+  #cf-wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  #cf-wrapper {
+    color: #404040;
+    display: block;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+      'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100vh;
+    text-align: left;
+    width: 100%;
+  }
+
+  #cf-wrapper a {
+    color: #0051c3;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  #cf-wrapper a:hover {
+    color: #f68b1f;
+  }
+
+  #cf-wrapper h1,
+  #cf-wrapper h2,
+  #cf-wrapper p {
+    color: #404040;
+    margin: 0;
+    padding: 0;
+  }
+
+  #cf-wrapper h1,
+  #cf-wrapper h2 {
+    font-weight: 300;
+  }
+
+  #cf-wrapper h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  #cf-wrapper h2 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  #cf-wrapper h2 + p {
+    margin-top: 1em;
+  }
+
+  #cf-wrapper strong {
+    font-weight: 600;
+  }
+
+  #cf-wrapper .cf-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  #cf-wrapper .cf-alert {
+    background-color: #de5052;
+    border: 1px solid #521010;
+    border-radius: 2px;
+    color: #fff;
+    display: none;
+    font-size: 13px;
+    padding: 7.5px 15px;
+  }
+
+  #cf-wrapper .cf-error-overview {
+    padding: 25px 0 0;
+  }
+
+  #cf-wrapper .cf-subheadline {
+    color: #595959;
+    margin-top: 0;
+  }
+
+  #cf-wrapper .cf-section {
+    background: transparent;
+    display: block;
+    margin-bottom: 2em;
+    margin-top: 2em;
+  }
+
+  #cf-wrapper .cf-highlight {
+    background: #ebebeb;
+    background-image: linear-gradient(
+      to bottom,
+      #dedede,
+      #ebebeb 3%,
+      #ebebeb 97%,
+      #dedede
+    );
+    overflow-x: hidden;
+    padding: 30px 0;
+  }
+
+  #cf-wrapper .cf-screenshot-container {
+    background: url('/cf-warning/browser-bar.png') no-repeat #fff;
+    border-radius: 5px 5px 0 0;
+    max-height: 400px;
+    max-width: 100%;
+    overflow: hidden;
+    padding-top: 53px;
+    width: 960px;
+  }
+
+  #cf-wrapper .cf-screenshot-container .cf-no-screenshot {
+    background: url('/cf-warning/cf-no-screenshot-warn.png') no-repeat;
+    display: block;
+    height: 158px;
+    left: 50%;
+    margin-left: -89px;
+    margin-top: -79px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    width: 178px;
+  }
+
+  #cf-wrapper .cf-columns {
+    display: block;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  #cf-wrapper .cf-columns::after,
+  #cf-wrapper .cf-columns::before,
+  #cf-wrapper .cf-section::after,
+  #cf-wrapper .cf-section::before,
+  #cf-wrapper .cf-wrapper::after,
+  #cf-wrapper .cf-wrapper::before {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+
+  #cf-wrapper .cf-column {
+    float: left;
+    padding-bottom: 45px;
+    width: 100%;
+  }
+
+  #cf-wrapper .cf-column:last-child {
+    padding-bottom: 0;
+  }
+
+  #cf-wrapper .cf-error-footer {
+    border-top: 1px solid #ebebeb;
+    padding: 1.33333em 0;
+    text-align: center;
+  }
+
+  #cf-wrapper .cf-error-footer p {
+    font-size: 13px;
+  }
+
+  #cf-wrapper .cf-footer-item {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  #cf-wrapper .cf-footer-separator {
+    display: none;
+  }
+
+  @media screen and (min-width: 49.2em) {
+    #cf-wrapper .cf-wrapper {
+      width: 708px;
+    }
+
+    #cf-wrapper #cf-error-details h1 {
+      font-size: 4em;
+    }
+
+    #cf-wrapper .cf-error-overview {
+      padding-top: 2.33333em;
+    }
+
+    #cf-wrapper .cf-highlight {
+      padding: 4em 0;
+    }
+
+    #cf-wrapper .cf-screenshot-container {
+      height: 400px;
+      margin-bottom: -4em;
+      max-width: none;
+    }
+
+    #cf-wrapper .cf-column {
+      padding-bottom: 0;
+    }
+
+    #cf-wrapper .cf-columns.two .cf-column {
+      padding-left: 0;
+      padding-right: 22.5px;
+      width: 50%;
+    }
+
+    #cf-wrapper .cf-columns.two .cf-column:nth-child(2n) {
+      padding-left: 22.5px;
+      padding-right: 0;
+    }
+
+    #cf-wrapper .cf-error-footer {
+      padding: 2.66667em 0;
+    }
+
+    #cf-wrapper .cf-footer-item,
+    #cf-wrapper .cf-footer-separator {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    #cf-wrapper .cf-footer-separator {
+      padding: 0 0.25em;
+    }
+  }
+
+  @media screen and (min-width: 66em) {
+    #cf-wrapper .cf-wrapper {
+      width: 960px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    #cf-wrapper h1 {
+      font-size: 40px;
+    }
+
+    #cf-wrapper h2 {
+      font-size: 25px;
+    }
+
+    #cf-wrapper .cf-highlight {
+      padding: 24px 0;
+    }
+
+    #cf-wrapper .cf-screenshot-container {
+      min-height: 250px;
+    }
+  }
+</style>

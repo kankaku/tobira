@@ -2,7 +2,7 @@
 
 ## Current milestone
 
-M0: Minimal deployable Hello World site.
+M1: Temporary public warning gate.
 
 ## Done
 
@@ -12,12 +12,16 @@ M0: Minimal deployable Hello World site.
 - Dependencies installed.
 - Build and npm audit verification passed.
 - GitHub repository created and `main` pushed.
+- Fake Cloudflare-style warning gate implemented for public visitors.
+- Warning gate build and browser behavior verified.
 
 ## Not yet done
 
+- Push warning gate changes through PR review.
 - Configure Cloudflare Pages deployment.
 - Connect `www.kankaku.net`.
 
 ## Next recommended step
 
-Configure Cloudflare Pages from the GitHub repository.
+Verify and publish the temporary warning gate PR, then configure Cloudflare Pages
+from the GitHub repository.
