@@ -24,4 +24,5 @@ development.
 
 - Static warning gate implemented.
 - Build and browser verification passed.
+- PR review feedback addressed by moving the document shell into an Astro layout.
 - PR review loop pending.

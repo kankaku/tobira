@@ -14,6 +14,7 @@ M1: Temporary public warning gate.
 - GitHub repository created and `main` pushed.
 - Fake Cloudflare-style warning gate implemented for public visitors.
 - Warning gate build and browser behavior verified.
+- Access gate document shell moved into an Astro layout after PR review.
 
 ## Not yet done
 

@@ -1,5 +1,6 @@
 ---
 import AccessGate from '../components/AccessGate.astro';
+import AccessGateLayout from '../layouts/AccessGateLayout.astro';
 
 export function getStaticPaths() {
   return [
@@ -9,4 +10,6 @@ export function getStaticPaths() {
 }
 ---
 
-<AccessGate />
+<AccessGateLayout>
+  <AccessGate />
+</AccessGateLayout>
